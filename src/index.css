@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: #170D2B;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+}
+.star { animation: twinkle var(--d, 4s) ease-in-out var(--delay, 0s) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none; opacity: 0.5; }
+}
